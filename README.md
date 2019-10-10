@@ -42,5 +42,6 @@ python manage.py migrate
 -------------------------------------
 python manage.py help
 
-python manage.py createsuperuser
+python manage.py createuperuser
+
 -------------------------------------
