@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Destination
+from .models import Destination, Testimonial
 
 def index(request):
     # return HttpResponse("Hello World")
@@ -29,4 +29,6 @@ def index(request):
     # return render(request,"index.html", {'dests': dests},)
     # -------------------------------------------------------
     dests = Destination.objects.all()
-    return render(request,"index.html", {'dests': dests},)
+    messages = Testimonial.objects.all()
+
+    return render(request,"index.html", {'dests': dests,'messages': messages})

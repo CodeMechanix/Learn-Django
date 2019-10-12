@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 
 def logout(request):
@@ -21,8 +22,12 @@ def login(request):
             return redirect('login')
     else:
         return render(request, 'login.html')
-
+@login_required(login_url='/accounts/login/')
+def book(request):
+    return render(request,"booklist.html")
             
+def home(request):
+    return render(request,"index.html")
 
 def register(request):
     if request.method == 'POST':
