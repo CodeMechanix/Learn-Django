@@ -29,3 +29,19 @@ python manage.py runserver
 python manage.py startapp calc
  
 python manage.py collectstatic
+
+-------------------------------------
+pip install psycopg2
+
+pip install pillow
+
+python manage.py makemigrations
+
+python manage.py migrate
+
+-------------------------------------
+python manage.py help
+
+python manage.py createuperuser
+
+-------------------------------------
