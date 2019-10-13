@@ -1,6 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
+from django.utils import timezone
+from travello.models import Roleurl
 from django.contrib import messages
+from django.http import HttpResponse
+from django.core import serializers
+
+
 from django.contrib.auth.decorators import login_required
 
 
@@ -13,6 +19,7 @@ def login(request):
         password = request.POST['psw']
 
         user = auth.authenticate(username=username, password=password)
+        request.session['SessionName'] = user.is_staff
 
         if user is not None:
             auth.login(request, user)
@@ -22,11 +29,18 @@ def login(request):
             return redirect('login')
     else:
         return render(request, 'login.html')
-@login_required(login_url='/accounts/login/')
+
 def book(request):
-    return render(request,"booklist.html")
+    if(request.session['SessionName']):
+        return render(request, 'booklist.html')
+        # 
+        # b = Roleurl.objects.filter(user_type="admin").values('valid_url')
+        # return HttpResponse(b)
+    else:
+        return render(request,"error.html")
             
 def home(request):
+    # return HttpResponse(request.session['SessionName'])
     return render(request,"index.html")
 
 def register(request):

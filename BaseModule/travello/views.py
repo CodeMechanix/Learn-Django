@@ -3,7 +3,7 @@ from .models import Destination, Testimonial
 
 def index(request):
     # return HttpResponse("Hello World")
-    
+
     # dest1 = Destination()
     # dest1.name = "Dhaka"
     # dest1.desc = "I Love Bangladesh"

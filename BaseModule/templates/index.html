@@ -35,7 +35,7 @@
 							<nav class="main_nav">
 								<ul class="d-flex flex-row align-items-start justify-content-start">
 									<li class="active"><a href="">Home</a></li>
-									{% if user.is_staff %}
+									{% if user.is_authenticated and user.is_staff %}
 									<li><a href="accounts/book">Book List</a></li>
 									{% endif %}
 									{% if user.is_authenticated %}

@@ -26,12 +26,14 @@ class Book(models.Model):
     book_writter = models.CharField(max_length=500)
     book_type = models.CharField(max_length=200)
 
-class loggedInUser(models.Model):
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, related_name='logged_in_user', on_delete=models.CASCADE)
-    # Session keys are 32 characters long
-    session_key = models.CharField(max_length=32, null=True, blank=True)
+class url_access(models.Model):
+    url_id = models.CharField(max_length=500)
 
-    def __str__(self):
-        return self.user.username
+class Roleurl(models.Model):
+    user_type = models.CharField(max_length=500)
+    valid_url = models.CharField(max_length=500)
+
+def __str__(self):
+    return self.name
 
 
