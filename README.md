@@ -42,6 +42,6 @@ python manage.py migrate
 -------------------------------------
 python manage.py help
 
-python manage.py createuperuser
+python manage.py createuperuser  || winpty python manage.py createsuperuser
 
 -------------------------------------
