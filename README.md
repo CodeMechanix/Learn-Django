@@ -25,6 +25,7 @@ cd project_name
 dir
 
 python manage.py runserver
+---------------------------------------
 
 python manage.py startapp calc
  
