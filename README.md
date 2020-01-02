@@ -25,6 +25,9 @@ cd project_name
 dir
 
 python manage.py runserver
+
+python -m pip install -U Django
+
 ---------------------------------------
 
 python manage.py startapp calc
@@ -37,6 +40,7 @@ pip install psycopg2
 pip install pillow
 
 python manage.py makemigrations
+
 --------------------------------------
 
 python manage.py migrate
